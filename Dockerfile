@@ -33,9 +33,6 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/* \
   && curl -sS https://bootstrap.pypa.io/get-pip.py | python3.12 - --break-system-packages
 
-COPY . /tmp/instaGRAAL
-
-RUN python3.12 -m pip install --break-system-packages /tmp/instaGRAAL[dev] \
-  && rm -rf /tmp/instaGRAAL
+RUN python3.12 -m pip install --break-system-packages instagraal==0.2.0
 
 WORKDIR /work
